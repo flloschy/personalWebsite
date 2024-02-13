@@ -77,7 +77,7 @@
 			0 0 10px black inset;
 		width: 10rem;
 		height: 10rem; /* Set a fixed height */
-		background-image: url('./cow_small.webp');
+		background-image: url('/cow_small.webp');
 		/* zoom into the background */
 		background-size: 150% 150%;
 		background-position: 50% 50%;
