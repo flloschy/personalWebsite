@@ -1,0 +1,14 @@
+{
+	"name": "Floschy.me",
+	"short_name": "Floschy",
+	"icons": [
+		{
+			"src": "./favicon.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		}
+	],
+	"start_url": "/",
+	"display": "standalone",
+	"prefer_related_applications": false
+}
