@@ -25,8 +25,8 @@
 				points.push({
 					x: mouse.x + (random ? 100 * Math.random() - 50 : 50 * Math.random() - 25),
 					y: mouse.y + (random ? 100 * Math.random() - 50 : 50 * Math.random() - 25),
-					vx: mouse.m.x * 2,
-					vy: mouse.m.y * 2,
+					vx: mouse.m.x * 10,
+					vy: mouse.m.y * 10,
 					r: 10,
 					// c: `hsl(${Math.floor(360 * Math.random())},40%, 50%)`,
 					c: getComputedStyle(document.body).getPropertyValue(
@@ -112,8 +112,9 @@
 					return;
 				}
                 
-                const x = point.x - point.vx * (1-(now-point.t)/500)
-                const y = point.y - point.vy * (1-(now-point.t)/500)
+                const interpolate = (now-point.t)/500
+                const x = point.x + point.vx * interpolate
+                const y = point.y + point.vy * interpolate
                 
 				ctx.beginPath();
 				if (point.ty) {
@@ -130,9 +131,6 @@
 					ctx.fillStyle = point.c;
 					ctx.fill();
 				}
-
-				// point.x += point.vx;
-				// point.y += point.vy;
 			});
 
 			if (++frameCount % 10 === 0) {
