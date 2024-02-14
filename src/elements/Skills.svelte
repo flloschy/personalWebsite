@@ -84,7 +84,8 @@
 	.bar {
 		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5) inset;
 		border-radius: 50px;
-		height: 0%;
+		height: 100%;
+        width: 100%;
 		background-image: repeating-linear-gradient(
 			45deg,
 			var(--primary),
