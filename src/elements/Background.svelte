@@ -25,8 +25,8 @@
 				points.push({
 					x: mouse.x + (random ? 100 * Math.random() - 50 : 50 * Math.random() - 25),
 					y: mouse.y + (random ? 100 * Math.random() - 50 : 50 * Math.random() - 25),
-					vx: mouse.m.x,
-					vy: mouse.m.y,
+					vx: mouse.m.x * 2,
+					vy: mouse.m.y * 2,
 					r: 10,
 					// c: `hsl(${Math.floor(360 * Math.random())},40%, 50%)`,
 					c: getComputedStyle(document.body).getPropertyValue(
@@ -111,12 +111,16 @@
 					point.d = true;
 					return;
 				}
+                
+                const x = point.x - point.vx * (1-(now-point.t)/500)
+                const y = point.y - point.vy * (1-(now-point.t)/500)
+                
 				ctx.beginPath();
 				if (point.ty) {
-					ctx.arc(point.x, point.y, point.r, 0, TWO_PI);
+					ctx.arc(x , y, point.r, 0, TWO_PI);
 				} else {
 					let r = point.r * 2;
-					ctx.rect(point.x, point.y, r, r);
+					ctx.rect(x , y, r, r);
 				}
 
 				if (point.s) {
@@ -127,15 +131,15 @@
 					ctx.fill();
 				}
 
-				point.x += point.vx;
-				point.y += point.vy;
+				// point.x += point.vx;
+				// point.y += point.vy;
 			});
 
 			if (++frameCount % 10 === 0) {
 				points = points.filter((point) => !point.d);
 			}
 
-			if (points.length > 0) setTimeout(() => requestAnimationFrame(draw), 50);
+			if (points.length > 0) requestAnimationFrame(draw);
 		};
 		draw();
 	});
