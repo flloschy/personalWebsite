@@ -27,7 +27,7 @@
 				<a target="_blank" href="https://{service.src}" style="text-align: right;">{service.name}</a
 				>
 				<a target="_blank" href="https://{service.url}"
-					><span class="material-symbols-outlined"> open_in_new </span></a
+					><span class="material-symbols-outlined" style="margin-left: 0;"> open_in_new </span></a
 				>
 			{/if}
 		{/each}
