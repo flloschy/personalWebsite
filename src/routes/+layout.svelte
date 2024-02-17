@@ -1,10 +1,10 @@
 <script lang="ts">
 	import './global.css';
 	import './themes.css';
-	import Background from '../elements/Background.svelte';
-	import Links from '../elements/Links.svelte';
-	import Footer from '../elements/Footer.svelte';
-	import ThemeLoader from '../elements/ThemeLoader.svelte';
+	import Background from '../components/Background.svelte';
+	import Links from '../components/Links.svelte';
+	import Footer from '../components/Footer.svelte';
+	import ThemeLoader from '../components/ThemeLoader.svelte';
 </script>
 
 <ThemeLoader />

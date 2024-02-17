@@ -1,10 +1,10 @@
 <script lang="ts">
-	import About from '../elements/About.svelte';
-	import Contact from '../elements/Contact.svelte';
-	import Projects from '../elements/Projects.svelte';
-	import Services from '../elements/Services.svelte';
-	import Skills from '../elements/Skills.svelte';
-	import Welcome from '../elements/Welcome.svelte';
+	import About from '../components/About.svelte';
+	import Contact from '../components/Contact.svelte';
+	import Projects from '../components/Projects.svelte';
+	import Services from '../components/Services.svelte';
+	import Skills from '../components/Skills.svelte';
+	import Welcome from '../components/Welcome.svelte';
 </script>
 
 <svelte:head>
