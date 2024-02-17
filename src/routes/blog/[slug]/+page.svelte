@@ -1,24 +1,25 @@
 <script lang="ts">
+	import './shikiOverwrite.css';
 	import { page } from '$app/stores';
 
 	export let data;
 	const date = new Date(data.meta.date);
 	const diff = new Date(Date.now() - date.getTime());
 
-	let howlongago = '';
+	let timeSincePublished = '';
 
 	if (diff.getUTCFullYear() - 1970 > 0) {
-		howlongago = `${diff.getUTCFullYear() - 1970} years ago`;
+		timeSincePublished = `${diff.getUTCFullYear() - 1970} years ago`;
 	} else if (diff.getUTCMonth() > 0) {
-		howlongago = `${diff.getUTCMonth()} months ago`;
+		timeSincePublished = `${diff.getUTCMonth()} months ago`;
 	} else if (diff.getUTCDate() > 0) {
-		howlongago = `${diff.getUTCDate()} days ago`;
+		timeSincePublished = `${diff.getUTCDate()} days ago`;
 	} else if (diff.getUTCHours() > 0) {
-		howlongago = `${diff.getUTCHours()} hours ago`;
+		timeSincePublished = `${diff.getUTCHours()} hours ago`;
 	} else if (diff.getUTCMinutes() > 0) {
-		howlongago = `${diff.getUTCMinutes()} minutes ago`;
+		timeSincePublished = `${diff.getUTCMinutes()} minutes ago`;
 	} else {
-		howlongago = `${diff.getUTCSeconds()} seconds ago`;
+		timeSincePublished = `${diff.getUTCSeconds()} seconds ago`;
 	}
 </script>
 
@@ -35,8 +36,9 @@
 </svelte:head>
 
 <div class="head">
+	<a href="/blog">{'<'} back</a>
 	<h1>{data.meta.title}</h1>
-	<p>Pusblished {howlongago} [<small>{date.toLocaleDateString()}</small>]</p>
+	<p>Published {timeSincePublished} [<small>{date.toLocaleDateString()}</small>]</p>
 	<div class="tags">
 		{#each data.meta.categories as category}
 			<div>#{category}</div>
@@ -52,7 +54,11 @@
 		border-style: solid;
 		border-radius: 4px;
 	}
+	.head > a {
+		text-decoration: none;
+	}
 	.head > h1 {
+		margin-top: 0;
 		margin-bottom: 0;
 	}
 	.head > p {
@@ -67,7 +73,6 @@
 		margin-bottom: 30px;
 	}
 	.tags > div {
-		/* background-color: rgba(0, 0, 0, 0.2); */
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
 		border-radius: 1000px;
 		padding-right: 10px;
