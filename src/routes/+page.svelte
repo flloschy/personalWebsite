@@ -20,7 +20,7 @@
 		content="I'm Floschy, a hobby developer and IT student from Germany. Currently invested in web development using SvelteKit. Also Interested in game development although I don't make games myself"
 	/>
 	<meta property="og:url" content="https://floschy.me/" />
-	<meta property="og:image" content="https://floschy.me/cow_small.webp" />
+
 </svelte:head>
 
 <Welcome />
