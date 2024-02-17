@@ -1,9 +1,0 @@
-{
-	"cSpell.words": ["jambo"],
-	"grammarly.selectors": [
-		{
-			"language": "svelte",
-			"scheme": "file"
-		}
-	]
-}
