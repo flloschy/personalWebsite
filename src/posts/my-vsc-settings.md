@@ -1,7 +1,8 @@
 ---
 title: My VSC settings
 description: Here you can find my Visual Studio Code configuration
-date: '2024-2-17'
+created: '2024-2-17'
+updated: 'NaN'
 categories:
   - files
   - config

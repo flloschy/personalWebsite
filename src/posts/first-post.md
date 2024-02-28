@@ -1,7 +1,8 @@
 ---
 title: First post
 description: This is just a test post to test the markdown parser thing and see what can be done
-date: '2024-2-12'
+created: '2024-2-12'
+updated: 'NaN'
 categories:
   - test
 ---
@@ -79,5 +80,5 @@ Images work apparently :D
     <summary>Click me</summary>
     <p>Test</p>
     <p>Test</p>
-    
+
 </details>
