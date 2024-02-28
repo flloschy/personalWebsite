@@ -7,6 +7,6 @@ export const themes = [
 	'highcontrast',
 	'turbo',
 	'elgoog',
-	'ultralight',
-	'ultradark'
+    'burn',
+    'night'
 ];

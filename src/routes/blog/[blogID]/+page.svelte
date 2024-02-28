@@ -1,9 +1,9 @@
 <script lang="ts">
-	import './shikiOverwrite.css';
+	import './shikiOverwrite.scss';
 	import { page } from '$app/stores';
 
 	export let data;
-	const date = new Date(data.meta.date);
+	const date = new Date(data.meta.created);
 	const diff = new Date(Date.now() - date.getTime());
 
 	let timeSincePublished = '';
@@ -24,28 +24,29 @@
 </script>
 
 <svelte:head>
-	<title>Floschy.me # {data.meta.title}</title>
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content={data.meta.title} />
 	<meta property="og:description" content={data.meta.description} />
 	<meta name="description" content={data.meta.description} />
-	<meta property="og:url" content={$page.url.toString()} />
 	<meta property="article:published_time" content={date.toISOString()} />
 	<meta property="article:tag" content={data.meta.categories.join(', ')} />
 	<meta property="article:author" content="Floschy" />
 </svelte:head>
 
-<div class="head">
-	<a href="/blog">{'<'} back</a>
-	<h1>{data.meta.title}</h1>
-	<p>Published {timeSincePublished} [<small>{date.toLocaleDateString()}</small>]</p>
-	<div class="tags">
-		{#each data.meta.categories as category}
-			<div>#{category}</div>
-		{/each}
+<div>
+	<div class="head">
+		<a href="/blog">{'<'} back</a>
+		<h1 style="text-align: left;">{data.meta.title}</h1>
+		<p>Published {timeSincePublished} [<small>{date.toLocaleDateString()}</small>]</p>
+		<div class="tags">
+			{#each data.meta.categories as category}
+				<div>#{category}</div>
+			{/each}
+		</div>
+		<br />
 	</div>
+	<svelte:component this={data.content} />
 </div>
-<svelte:component this={data.content} />
 
 <style>
 	.head {
@@ -65,20 +66,5 @@
 		margin-top: 0;
 		color: var(--text);
 		opacity: 0.9;
-	}
-	.tags {
-		display: flex;
-		gap: 5px;
-		font-size: 0.7rem;
-		margin-bottom: 30px;
-	}
-	.tags > div {
-		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5) inset;
-		border-radius: 1000px;
-		padding-right: 10px;
-		padding-left: 10px;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		opacity: 0.8;
 	}
 </style>

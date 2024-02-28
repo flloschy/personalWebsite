@@ -1,108 +1,101 @@
 <script lang="ts">
-	const timeline = [
+	const times = [
 		{
-			time: '2019',
-			event:
-				'Here my journey started, while on holiday I got interested in programming a discord bot with Javascript. After watching a ton of tutorials I got back home and realized that the videos I watched were outdated... So after less than a week, I lost interest for the foreseeable future.'
+			time: 2019,
+			text: `
+                Here my journey started, while on holiday I got interested in programming a discord bot with
+		        Javascript. After watching a ton of tutorials I got back home and realized that the videos I
+		        watched were outdated... So after less than a week, I lost interest for the foreseeable future.
+            `
 		},
 		{
-			time: '~2020',
-			event:
-				'During the pandemic year I got started becoming a dev. Starting with Python to help myself with my schoolwork, with simple stuff like a calculator for Pythagoras theorem whilst in homeschooling.'
+			time: 2020,
+			text: `
+                During the pandemic year I got started becoming a dev. Starting with Python to help myself with
+                my schoolwork, with simple stuff like a calculator for Pythagoras theorem whilst in
+                homeschooling.
+            `
 		},
 		{
-			time: '2021',
-			event:
-				'Around the middle of the year, I started learning web development with plain HTML, CSS and Javascript'
+			time: 2021,
+			text: `
+                Around the middle of the year, I started learning web development with plain HTML, CSS and
+        		Javascript
+            `
 		},
 		{
-			time: '2022',
-			event:
-				'I finally got myself a Raspberry Pi 4 as my home server and thus got a great chance to learn about Linux and system administration. Additionally, I finished Secondary school and started my IT-focused full-time vocational school.'
+			time: 2022,
+			text: `
+                I finally got myself a Raspberry Pi 4 as my home server and thus got a great chance to learn
+                about Linux and system administration. Additionally, I finished Secondary school and started my
+                IT-focused full-time vocational school.
+            `
 		},
 		{
-			time: '2023',
-			event:
-				'After a year of not showing interest in web development, I got back into it and started learning SvelteKit as well as Typescript!'
+			time: 2023,
+			text: `
+                After a year of not showing interest in web development, I got back into it and started learning
+                SvelteKit as well as Typescript!
+            `
 		},
 		{
-			time: '2024',
-			event:
-				'At the beginning of the year I reinstalled my whole server, from scratch, without help, without tutorials.'
+			time: 2024,
+			text: `
+                After a year of not showing interest in web development, I got back into it and started learning
+                SvelteKit as well as Typescript!
+            `
 		}
 	];
 </script>
 
-<svelte:head>
-	<title>Floschy.me # Timeline</title>
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Floschy.me # Timeline" />
-	<meta
-		property="og:description"
-		content="A small, down to the point timeline of my life regarding programming"
-	/>
-	<meta
-		name="description"
-		content="A small, down to the point timeline of my life regarding programming"
-	/>
-	<meta property="og:url" content="https://floschy.me/timeline" />
-</svelte:head>
-
-<h1 id="timeline">Timeline</h1>
-<p>A small, down-to-the-point timeline of my life regarding programming</p>
-<div class="grid">
-	{#each timeline as time}
-		<div class="date">{time.time}</div>
-		<div class="wrapper">
-			<div class="line" />
-			<div class="circle" />
-			<div class="line" />
-		</div>
-		<div class="text">{time.event}</div>
-	{/each}
+<div>
+	<h1>Timeline</h1>
+	<div>
+		{#each times as time}
+			<date
+				><div class="dot" />
+				{time.time}</date
+			>
+			<p class="no-vertical-margin">{time.text}</p>
+		{/each}
+		<date>
+			<div class="dot" />
+			Info
+		</date>
+		<p class="no-vertical-margin" style="margin-bottom: 0;">
+			<small> (This timeline might vary from the actually times but its close enough) </small>
+		</p>
+	</div>
 </div>
-<small>(This timeline might vary from the actually times but its close enough)</small>
 
-<style>
-	small {
-		opacity: 0.5;
+<style lang="scss">
+	div > div {
+		padding-left: 10px;
+		border-width: 0;
+		border-left-width: 2px;
+		border-style: solid;
+		border-color: var(--primary);
 	}
 	p {
-		margin-bottom: 0;
+		margin-bottom: 2rem;
 	}
-	.grid {
-		margin-top: 20px;
-		margin-bottom: 20px;
-		display: grid;
-		grid-template-columns: auto 10px 1fr;
-		gap: 0px 10px;
-		align-items: center;
+	date {
+		position: relative;
+		color: var(--secondary);
 	}
-
-	.date {
-		color: var(--primary);
-		text-align: right;
-	}
-	.wrapper {
-		height: 100%;
-		width: 100%;
-		display: grid;
-		grid-template-rows: 1fr auto 1fr;
-		justify-items: center;
-	}
-	.line {
-		background-color: var(--secondary);
-		width: 2px;
-		height: 100%;
-	}
-	.text {
-		margin-top: 20px;
-		margin-bottom: 20px;
-	}
-	.circle {
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
+	.dot {
+		border: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 10px;
+		left: -16px;
 		background-color: var(--primary);
+		height: 10px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+	}
+	small {
+		opacity: 0.8;
 	}
 </style>

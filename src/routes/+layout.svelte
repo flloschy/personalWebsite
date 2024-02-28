@@ -1,36 +1,45 @@
 <script lang="ts">
-	import './global.css';
-	import './themes.css';
+	import { onMount } from 'svelte';
 	import Background from '../components/Background.svelte';
-	import Links from '../components/Links.svelte';
 	import Footer from '../components/Footer.svelte';
-	import ThemeLoader from '../components/ThemeLoader.svelte';
+	import './themes.scss';
+	import './global.scss';
+	import { themes } from './themes';
+	import { page } from '$app/stores';
+
+	onMount(() => {
+		let theme = localStorage.getItem('theme') ?? themes[Math.floor(Math.random() * themes.length)];
+		document.documentElement.dataset.theme = theme;
+	});
 </script>
 
-<ThemeLoader />
-<div class="container">
-	<Background />
-	<Links />
-	<div id="content">
-		<slot />
-	</div>
+<svelte:head>
+	<title
+		>{'floschy.' +
+			($page.url.pathname.split('/')[1] == '' ? 'home' : $page.url.pathname.split('/')[1])}</title
+	>
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:url" content={$page.url.toString()} />
+	<meta property="og:image" content="https://floschy.me/cow_small.webp" />
+	<meta name="description" content="Personal/Portfolio website" />
+</svelte:head>
+
+<Background />
+<div class="layout">
+	<slot />
 	<Footer />
 </div>
 
-<style>
-	.container {
+<style lang="scss">
+	.layout {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
-		margin-left: 15px;
-	}
-
-	#content {
-		flex: 1;
+		min-height: 100%;
 		max-width: 1000px;
-		width: 100%;
+		padding-left: 40px;
+		padding-right: 50px;
+		row-gap: 25vh;
 		margin: auto;
-		padding: 10px;
-		padding-bottom: 0;
+		justify-content: space-between;
 	}
 </style>

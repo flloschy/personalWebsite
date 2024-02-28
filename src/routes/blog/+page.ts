@@ -4,7 +4,7 @@ export function load() {
 			metadata: {
 				title: string;
 				description: string;
-				date: string;
+				created: string;
 				categories: string[];
 			};
 		};
@@ -13,7 +13,7 @@ export function load() {
 		key: string;
 		title: string;
 		description: string;
-		date: Date;
+		created: Date;
 		categories: string[];
 	}[] = [];
 	Object.keys(paths).forEach((key) => {
@@ -22,10 +22,10 @@ export function load() {
 			key: key.split('/').at(-1)?.replace('.md', '') as string,
 			title: post.title,
 			description: post.description,
-			date: new Date(post.date),
+			created: new Date(post.created),
 			categories: post.categories
 		});
 	});
 
-	return { n: n.sort((a, b) => b.date.getTime() - a.date.getTime()) };
+	return { n: n.sort((a, b) => b.created.getTime() - a.created.getTime()) };
 }
