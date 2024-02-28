@@ -1,5 +1,4 @@
 :root[data-theme='dark'],
-:root,
 div[data-theme='dark'] {
 	--text: #efe9f7;
 	--background: #120e21;
@@ -84,4 +83,20 @@ div[data-theme='ultradark'] {
 	--primary: #000000;
 	--secondary: #000000;
 	--accent: #000000;
+}
+:root[data-theme='burn'],
+div[data-theme='burn'] {
+	--text: #000000;
+	--background: #ffffff;
+	--primary: #000000;
+	--secondary: #ffffff;
+	--accent: #000000;
+}
+:root[data-theme='night'],
+div[data-theme='night'] {
+	--text: #ffffff;
+	--background: #000000;
+	--primary: #ffffff;
+	--secondary: #000000;
+	--accent: #ffffff;
 }
