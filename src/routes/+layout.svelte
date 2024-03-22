@@ -4,14 +4,14 @@
 	import Footer from '../components/Footer.svelte';
 	import './themes.scss';
 	import './global.scss';
-	import { randomThemes } from './themes';
+	import { themes } from './themes';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
 
 	// onMount(() => {
 
 	if (browser) {
-		let theme = localStorage.getItem('theme') ?? randomThemes[Math.floor(Math.random() * randomThemes.length)];
+		let theme = localStorage.getItem('theme') ?? themes[Math.floor(Math.random() * themes.length)];
 		document.documentElement.dataset.theme = theme;
 	}
 	// });

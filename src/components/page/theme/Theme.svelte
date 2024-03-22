@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 
 	export let theme: string;
+	export let hidden:boolean = false;
 
 	let background: string = '';
 	let primary: string = '';
@@ -34,7 +35,7 @@
 	});
 </script>
 
-<div id="theme-{theme}" class="neumorphism">
+<div id="theme-{theme}" class="neumorphism" class:hidden={hidden}>
 	<button
 		class="no-vertical-margin"
 		on:click={() => {
@@ -52,6 +53,13 @@
 </div>
 
 <style lang="scss">
+	.hidden {
+		opacity: 0.05;
+		transition: opacity 300ms ease-in-out;
+	}
+	.hidden:hover {
+		opacity: 1;
+	}
 	button {
 		cursor: pointer;
 		background-color: transparent;

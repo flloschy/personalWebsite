@@ -7,14 +7,17 @@
 <div>
 	<h1>Themes</h1>
 	{#each themes as name}
-		<Theme theme={name} />
+		<Theme theme={name}/>
 	{/each}
+	<Theme theme="burn" hidden={true}/>
+	<Theme theme="night" hidden={true}/>
 	<button
 		on:click={() => {
 			localStorage.removeItem('theme');
-			goto("/")
+			let theme = themes[Math.floor(Math.random() * themes.length)];
+			document.documentElement.dataset.theme = theme;
 		}}
-		><h1>Activate Random</h1>
+		><h1>Random</h1>
 	</button>
 </div>
 
