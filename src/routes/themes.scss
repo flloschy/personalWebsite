@@ -84,6 +84,39 @@ div[data-theme='ultradark'] {
 	--secondary: #000000;
 	--accent: #000000;
 }
+:root[data-theme='colorful'],
+div[data-theme='colorful'] {
+	--text: #0ac63b;
+	--background: #070707;
+	--primary: #ee4ba5;
+	--secondary: #b8c71f;
+	--accent: #e96c1c;
+}
+:root[data-theme='soft'],
+div[data-theme='soft'] {
+	--text: #ccc7f5;
+	--background: #0f0c37;
+	--primary: #f9e2cf;
+	--secondary: #723262;
+	--accent: #ffffff;
+}
+:root[data-theme='nature'],
+div[data-theme='nature'] {
+	--text: #e4e4e6;
+	--background: #323232;
+	--primary: #1abb78;
+	--secondary: #a2fe84;
+	--accent: #dbcf78;
+}
+:root[data-theme='nokia'],
+div[data-theme='nokia'] {
+	--text: #8cc502;
+	--background: #27360c;
+	--primary: #c73125;
+	--secondary: #8ac202;
+	--accent: #c73125;
+}
+
 :root[data-theme='burn'],
 div[data-theme='burn'] {
 	--text: #000000;
