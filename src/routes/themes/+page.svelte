@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import Theme from '../../components/page/theme/Theme.svelte';
 	import { themes } from '../themes';
 </script>
@@ -11,6 +12,7 @@
 	<button
 		on:click={() => {
 			localStorage.removeItem('theme');
+			goto("/")
 		}}
 		><h1>Activate Random</h1>
 	</button>
