@@ -1,16 +1,20 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 	import Background from '../components/Background.svelte';
 	import Footer from '../components/Footer.svelte';
 	import './themes.scss';
 	import './global.scss';
-	import { themes } from './themes';
+	import { randomThemes } from './themes';
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 
-	onMount(() => {
-		let theme = localStorage.getItem('theme') ?? themes.filter(name => name != "burn" && name != "night")[Math.floor(Math.random() * themes.length)];
+	// onMount(() => {
+
+	if (browser) {
+		let theme = localStorage.getItem('theme') ?? randomThemes[Math.floor(Math.random() * randomThemes.length)];
 		document.documentElement.dataset.theme = theme;
-	});
+	}
+	// });
 </script>
 
 <svelte:head>
