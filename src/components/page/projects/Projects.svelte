@@ -45,7 +45,7 @@
 <div class="verticalCenter" id="projects">
 	<h1>Projects</h1>
 	{#each projects as project}
-		<div class="project">
+		<div class="project neumorphism">
 			<h1 class="no-vertical-margin">
 				<a
 					href="https://github.com/{project.link}"
@@ -83,9 +83,5 @@
 		border-radius: 20px;
 		backdrop-filter: blur(10px);
 		// box-shadow: 0 0 10px var(--primary);
-
-		background-image: linear-gradient(70deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
-		box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.116) inset,
-					-10px -10px 30px rgb(0, 0, 0) inset;
 	}
 </style>

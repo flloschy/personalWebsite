@@ -7,7 +7,7 @@
 
 	<div class="grid">
 		{#each data.n as post}
-			<div class="post">
+			<div class="post neumorphism">
 				<div class="head">
 					<a href="/blog/{post.key}">{post.title}</a>
 					<p class="no-vertical-margin">{post.created.toLocaleDateString()}</p>
@@ -41,9 +41,6 @@
 		border-radius: 10px;
 		backdrop-filter: blur(10px);
 
-		background-image: linear-gradient(70deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
-		box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.116) inset,
-					-10px -10px 30px rgb(0, 0, 0) inset;
 	}
 
 	.head {
