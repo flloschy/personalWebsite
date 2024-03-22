@@ -8,7 +8,7 @@
 	import { page } from '$app/stores';
 
 	onMount(() => {
-		let theme = localStorage.getItem('theme') ?? themes[Math.floor(Math.random() * themes.length)];
+		let theme = localStorage.getItem('theme') ?? themes.filter(name => name != "burn" && name != "night")[Math.floor(Math.random() * themes.length)];
 		document.documentElement.dataset.theme = theme;
 	});
 </script>
