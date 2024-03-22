@@ -77,10 +77,15 @@
 	.project {
 		width: 100%;
 		margin-top: 2rem;
-		box-shadow: 0 0 10px var(--primary);
 		background-color: rgba(0, 0, 0, 0.2);
 		padding-left: 25px;
 		padding-right: 25px;
 		border-radius: 20px;
+		backdrop-filter: blur(10px);
+		// box-shadow: 0 0 10px var(--primary);
+
+		background-image: linear-gradient(70deg, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+		box-shadow: 10px 10px 30px rgba(255, 255, 255, 0.116) inset,
+					-10px -10px 30px rgb(0, 0, 0) inset;
 	}
 </style>
