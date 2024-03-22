@@ -34,7 +34,7 @@
 	});
 </script>
 
-<div id="theme-{theme}">
+<div id="theme-{theme}" class="neumorphism">
 	<button
 		class="no-vertical-margin"
 		on:click={() => {
@@ -60,7 +60,7 @@
 		color: var(--text);
 	}
 	div {
-		border: var(--primary) 2px solid;
+		// border: var(--primary) 2px solid;
 		border-radius: 10px;
 		box-sizing: border-box;
 		& > div {

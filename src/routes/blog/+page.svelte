@@ -39,7 +39,7 @@
 		// border-style: solid;
 		padding: 20px;
 		border-radius: 10px;
-		backdrop-filter: blur(10px);
+		// backdrop-filter: blur(10px);
 
 	}
 
