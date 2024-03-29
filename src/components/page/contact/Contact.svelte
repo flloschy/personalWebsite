@@ -56,7 +56,7 @@
 		<p>
 			If you ever want to contact me you can add me on <a
 				href="https://discord.com/users/578620425060483072">discord</a
-			>or send me something by this form.<br>
+			> or send me something by this form.<br>
 		</p>
 		{#each emailError as error}
 			<div class="neumorphism error">{error}</div>
