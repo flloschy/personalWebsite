@@ -117,6 +117,12 @@
 			link: 'https://joyofcode.xyz/sveltekit-markdown-blog'
 		},
 		{
+			title: "doncez.art",
+			what: "A personal/portfolio website",
+			why: "Saw it in the svelte Discord server and a contact form via discord webhook inspired me to do that too!",
+			link: "https://doncez.art/"
+		},
+		{
 			title: 'a lot more!',
 			what: 'Inspiration came from a lot more places',
 			why: "These where simply too many to list and/or remember and weren't as significant in my design choices anyway",
