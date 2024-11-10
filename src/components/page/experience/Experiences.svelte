@@ -10,7 +10,7 @@
 		'SQL',
 		'HTML',
 		'CSS/SCS',
-                'tailwind'
+                'tailwind',
 		'Shell*',
 		'Bash*',
 		'PHP*',
