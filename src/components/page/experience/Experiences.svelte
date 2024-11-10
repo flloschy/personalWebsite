@@ -8,13 +8,13 @@
 		'Typescript',
 		'Java',
 		'SQL',
-		'(HTML)',
-		'(CSS)',
-		'(SCSS)',
+		'HTML',
+		'CSS/SCS',
+                'tailwind'
 		'Shell*',
 		'Bash*',
 		'PHP*',
-		'Svelte(kit)',
+		'Svelte[kit]',
 		'Arduino C++',
 		'C++*',
 		'C*'
@@ -22,10 +22,10 @@
 	const operatingSystems = [
 		'Windows 10/11',
 		'Raspberry Pi OS',
-		'Kali Linux',
-		'Ubuntu',
+		'Kali Linux*',
+		'Ubuntu*',
 		'Debian',
-		'Arch*',
+		'Arch Linux',
 		'iOS'
 	];
 	const hosting = [
@@ -36,7 +36,8 @@
 		'Vault Warden',
 		'Auto-DL',
 		'Code server',
-		'floschy.me'
+		'floschy.dev',
+		'immich'
 	];
 	const tools = [
 		'Visual Studio Code',
@@ -51,7 +52,8 @@
 		'Docker',
 		'Nginx',
 		'Namecheap',
-		'Unity*'
+		'Unity*',
+                'Dloudflare(d)'
 	];
 
 	let showExtra = false;
